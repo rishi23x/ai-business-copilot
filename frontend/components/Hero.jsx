@@ -1,8 +1,8 @@
 "use client";
 
-import AIOrb from "./AIOrb"
-import GlassCard from "./GlassCard"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import AIOrb from "./AIOrb";
+import GlassCard from "./GlassCard";
 
 
 export default function Hero(){
@@ -11,68 +11,27 @@ return(
 
 <section className="
 min-h-screen
-flex
-flex-col
-items-center
-justify-center
-bg-black
-text-white
 relative
 overflow-hidden
+bg-black
+text-white
+flex
+items-center
+justify-center
 ">
 
 
-<div className="absolute opacity-40">
-<AIOrb/>
-</div>
-
-
-
-<div className="z-10 text-center">
-
-
-<motion.h1
-initial={{opacity:0,y:40}}
-animate={{opacity:1,y:0}}
-transition={{duration:0.8}}
-className="
-text-6xl
-font-bold
-max-w-4xl
-"
->
-Your Business.
-<br/>
-Powered By Intelligence.
-</motion.h1>
-
-
-<p className="
-mt-6
-text-xl
-text-gray-400
+<div className="
+absolute
+top-0
+left-0
+w-full
+h-full
+bg-gradient-to-b
+from-blue-900/20
+via-black
+to-black
 ">
-
-AI that understands operations,
-finds problems,
-and creates decisions.
-
-</p>
-
-
-<button className="
-mt-8
-px-8
-py-4
-rounded-full
-bg-white
-text-black
-font-semibold
-">
-
-Connect Your Data
-
-</button>
 
 
 </div>
@@ -80,36 +39,121 @@ Connect Your Data
 
 
 <div className="
-absolute
-bottom-20
+z-10
+text-center
+flex
+flex-col
+items-center
+">
+
+
+<motion.h1
+
+initial={{
+opacity:0,
+y:40
+}}
+
+animate={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:1
+}}
+
+className="
+text-6xl
+font-bold
+tracking-tight
+max-w-5xl
+"
+
+>
+
+The Intelligence Layer
+<br/>
+
+For The Real World Economy
+
+</motion.h1>
+
+
+
+<motion.p
+
+initial={{
+opacity:0
+}}
+
+animate={{
+opacity:1
+}}
+
+transition={{
+delay:0.5
+}}
+
+className="
+mt-6
+text-xl
+text-gray-400
+max-w-2xl
+"
+
+>
+
+AI that connects data,
+operations and decisions into one
+business intelligence system.
+
+</motion.p>
+
+
+
+<div className="mt-12">
+
+<AIOrb/>
+
+</div>
+
+
+
+<div className="
+mt-12
 flex
 gap-5
 ">
 
 
-<GlassCard 
-title="AI Health Score"
-value="92%"
+<GlassCard
+title="AI Operations Score"
+value="94%"
 />
 
 
 <GlassCard
-title="Problems Found"
+title="Problems Detected"
 value="12"
 />
 
 
 <GlassCard
-title="Revenue Growth"
-value="+24%"
+title="Efficiency Gain"
+value="+31%"
 />
 
 
 </div>
 
 
-</section>
 
+</div>
+
+
+
+</section>
 
 )
 
