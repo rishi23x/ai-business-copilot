@@ -6,7 +6,7 @@ export default function Home() {
       </h1>
 
       <p>
-        Intelligence layer for modern businesses.
+        Your AI powered business intelligence platform.
       </p>
     </main>
   );
