@@ -10,11 +10,11 @@
   "dependencies": {
     "@tailwindcss/postcss": "latest",
     "autoprefixer": "latest",
+    "framer-motion": "latest",
     "next": "latest",
     "postcss": "latest",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "latest"
-    "framer-motion": "latest"
   }
 }
