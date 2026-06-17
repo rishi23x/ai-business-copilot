@@ -15,5 +15,6 @@
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "latest"
+    "framer-motion": "latest"
   }
 }
