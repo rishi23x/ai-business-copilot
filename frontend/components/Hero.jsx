@@ -1,3 +1,5 @@
+"use client";
+
 import AIOrb from "./AIOrb"
 import GlassCard from "./GlassCard"
 import { motion } from "framer-motion"
