@@ -1,6 +1,8 @@
+import "./globals.css";
+
 export const metadata = {
   title: "AI Business Copilot",
-  description: "AI intelligence for business operations",
+  description: "AI intelligence platform",
 };
 
 export default function RootLayout({ children }) {
