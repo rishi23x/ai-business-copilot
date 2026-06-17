@@ -7,13 +7,15 @@ export default function Navbar() {
       </h1>
 
       <div className="flex gap-6 text-gray-300">
-        <a href="#">Product</a>
-        <a href="#">Solutions</a>
-        <a href="#">About</a>
-
-        <button className="px-5 py-2 rounded-full bg-white text-black">
-          Get Started
-        </button>
+<a href="/dashboard">Dashboard</a>
+<a href="/login">Login</a>
+<a href="#">About</a>
+       <a 
+href="/login"
+className="px-5 py-2 rounded-full bg-white text-black"
+>
+Get Started
+</a>
       </div>
 
     </nav>
