@@ -8,11 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
-  "next": "latest",
-  "react": "latest",
-  "react-dom": "latest",
-  "tailwindcss": "latest",
-  "postcss": "latest",
-  "autoprefixer": "latest"
- }
+    "@tailwindcss/postcss": "latest",
+    "autoprefixer": "latest",
+    "next": "latest",
+    "postcss": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest"
+  }
 }
