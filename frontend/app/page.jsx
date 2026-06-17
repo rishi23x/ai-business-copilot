@@ -1,13 +1,19 @@
-export default function Home() {
-  return (
-    <main>
-      <h1>
-        AI Business Copilot
-      </h1>
+import Navbar from "@/components/Navbar"
+import Hero from "@/components/Hero"
 
-      <p>
-        Your AI powered business intelligence platform.
-      </p>
-    </main>
-  );
+
+export default function Home(){
+
+return(
+
+<main>
+
+<Navbar/>
+
+<Hero/>
+
+</main>
+
+)
+
 }
