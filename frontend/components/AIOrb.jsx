@@ -1,51 +1,128 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import { Canvas, useFrame } from "@react-three/fiber"
+import {
+  Environment,
+  Float,
+  MeshTransmissionMaterial,
+  Sparkles
+} from "@react-three/drei"
+
+import { useRef } from "react"
+
+
+function Orb() {
+
+  const mesh = useRef()
+
+
+  useFrame((state, delta)=>{
+
+    if(mesh.current){
+
+      mesh.current.rotation.y += delta * 0.35
+      mesh.current.rotation.x += delta * 0.15
+
+    }
+
+  })
+
+
+  return (
+
+    <Float
+      speed={2}
+      rotationIntensity={1}
+      floatIntensity={1}
+    >
+
+      <mesh ref={mesh}>
+
+        <sphereGeometry
+          args={[1.4,128,128]}
+        />
+
+        <MeshTransmissionMaterial
+
+          thickness={1.8}
+          roughness={0.05}
+          transmission={1}
+          chromaticAberration={0.08}
+          distortion={0.3}
+          distortionScale={0.4}
+
+        />
+
+      </mesh>
+
+
+    </Float>
+
+  )
+
+}
+
+
 
 export default function AIOrb(){
 
-return(
+return (
 
-<motion.div
-
-animate={{
-  scale:[1,1.08,1],
-  rotate:[0,180,360]
-}}
-
-transition={{
- duration:8,
- repeat:Infinity,
- ease:"linear"
-}}
-
+<div
 className="
-relative
-h-72
-w-72
-rounded-full
-bg-gradient-to-r
-from-blue-500
-via-purple-500
-to-cyan-400
-blur-[1px]
-shadow-[0_0_120px_rgba(80,120,255,0.7)]
+w-full
+h-[500px]
 "
-
 >
 
-<div className="
-absolute
-inset-6
-rounded-full
-bg-black/40
-backdrop-blur-3xl
-">
+
+<Canvas
+camera={{
+position:[0,0,4],
+fov:45
+}}
+>
+
+
+<ambientLight intensity={0.5}/>
+
+
+<pointLight
+position={[3,3,3]}
+intensity={3}
+/>
+
+
+<pointLight
+position={[-3,-2,-3]}
+color="#00ffff"
+intensity={2}
+/>
+
+
+<Orb/>
+
+
+<Sparkles
+
+count={200}
+
+scale={5}
+
+size={2}
+
+speed={0.4}
+
+/>
+
+
+<Environment preset="city"/>
+
+
+</Canvas>
+
 
 </div>
-
-
-</motion.div>
 
 )
 
