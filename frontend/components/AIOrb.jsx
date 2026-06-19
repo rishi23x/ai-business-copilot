@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { Canvas, useFrame } from "@react-three/fiber"
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Environment,
   Float,
   MeshTransmissionMaterial,
   Sparkles
-} from "@react-three/drei"
+} from "@react-three/drei";
 
-import { useRef } from "react"
+import { useRef } from "react";
 
 
 function Orb() {
