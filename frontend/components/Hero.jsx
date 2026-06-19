@@ -1,8 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AIOrb from "./AIOrb";
+import dynamic from "next/dynamic";
 import GlassCard from "./GlassCard";
+
+
+const AIOrb = dynamic(
+  () => import("./AIOrb"),
+  {
+    ssr:false
+  }
+);
 
 
 export default function Hero(){
@@ -11,6 +19,7 @@ return(
 
 <section className="
 min-h-screen
+py-20
 relative
 overflow-hidden
 bg-black
@@ -112,7 +121,11 @@ business intelligence system.
 
 
 
-<div className="mt-12">
+<div className="
+mt-10
+w-[500px]
+h-[500px]
+">
 
 <AIOrb/>
 
