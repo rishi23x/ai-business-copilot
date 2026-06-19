@@ -1,64 +1,77 @@
-"use client";
+"use client"
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber"
 import {
   Environment,
   Float,
   MeshTransmissionMaterial,
-  Sparkles
-} from "@react-three/drei";
+  Sparkles,
+  Sphere
+} from "@react-three/drei"
 
-import { useRef } from "react";
-
-
-function Orb() {
-
-  const mesh = useRef()
+import { useRef } from "react"
 
 
-  useFrame((state, delta)=>{
+function Core(){
 
-    if(mesh.current){
-
-      mesh.current.rotation.y += delta * 0.35
-      mesh.current.rotation.x += delta * 0.15
-
-    }
-
-  })
+const mesh = useRef()
 
 
-  return (
+useFrame((state,delta)=>{
 
-    <Float
-      speed={2}
-      rotationIntensity={1}
-      floatIntensity={1}
-    >
+if(mesh.current){
 
-      <mesh ref={mesh}>
+mesh.current.rotation.y += delta * 0.4
+mesh.current.rotation.x += delta * 0.15
 
-        <sphereGeometry
-          args={[1.4,128,128]}
-        />
+}
 
-        <MeshTransmissionMaterial
-
-          thickness={1.8}
-          roughness={0.05}
-          transmission={1}
-          chromaticAberration={0.08}
-          distortion={0.3}
-          distortionScale={0.4}
-
-        />
-
-      </mesh>
+})
 
 
-    </Float>
+return (
 
-  )
+<Float
+speed={2}
+rotationIntensity={0.8}
+floatIntensity={1.2}
+>
+
+
+<Sphere
+ref={mesh}
+args={[1.3,128,128]}
+scale={1}
+>
+
+
+<MeshTransmissionMaterial
+
+thickness={2}
+
+roughness={0.05}
+
+transmission={1}
+
+ior={1.5}
+
+chromaticAberration={0.15}
+
+distortion={0.35}
+
+distortionScale={0.5}
+
+color="#8fffff"
+
+/>
+
+
+</Sphere>
+
+
+</Float>
+
+)
 
 }
 
@@ -66,14 +79,10 @@ function Orb() {
 
 export default function AIOrb(){
 
-return (
 
-<div
-className="
-w-full
-h-[500px]
-"
->
+return(
+
+<div className="w-full h-full">
 
 
 <Canvas
@@ -84,34 +93,43 @@ fov:45
 >
 
 
-<ambientLight intensity={0.5}/>
+<ambientLight intensity={0.8}/>
 
 
 <pointLight
-position={[3,3,3]}
-intensity={3}
-/>
 
+position={[4,4,4]}
 
-<pointLight
-position={[-3,-2,-3]}
+intensity={5}
+
 color="#00ffff"
-intensity={2}
+
 />
 
 
-<Orb/>
+<pointLight
+
+position={[-4,-2,-4]}
+
+intensity={3}
+
+color="#8b5cf6"
+
+/>
+
+
+<Core/>
 
 
 <Sparkles
 
-count={200}
+count={250}
 
 scale={5}
 
 size={2}
 
-speed={0.4}
+speed={0.5}
 
 />
 
