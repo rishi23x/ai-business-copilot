@@ -6,7 +6,7 @@ import { Environment, Float, MeshDistortMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
-// ───── Energy Shader (the "textured" look) ─────
+// ───── Energy Shader ─────
 const energyVertexShader = `
   varying vec3 vPosition;
   varying vec3 vNormal;
@@ -121,7 +121,6 @@ function EnergyCore() {
   )
 }
 
-// ───── Glass Sphere ─────
 function GlassSphere() {
   const meshRef = useRef(null)
   const reduced = useReducedMotion()
@@ -152,7 +151,6 @@ function GlassSphere() {
   )
 }
 
-// ───── Orbiting Particles ─────
 const particleShells = [
   { count: 60, innerRadius: 3.5, outerRadius: 4.5, color: '#3DD6D0', speed: 0.8 },
   { count: 80, innerRadius: 4.5, outerRadius: 6.0, color: '#5C7AFF', speed: 0.5 },
@@ -223,7 +221,6 @@ function OrbitingParticles() {
   )
 }
 
-// ───── Satellites ─────
 function Satellites() {
   const reduced = useReducedMotion()
   const sat1Ref = useRef(null)
@@ -256,7 +253,6 @@ function Satellites() {
   )
 }
 
-// ───── 3D Scene ─────
 function Scene3D() {
   return (
     <>
@@ -273,7 +269,6 @@ function Scene3D() {
   )
 }
 
-// ───── Main Export ─────
 export default function AIOrb() {
   return (
     <div className="absolute inset-0 w-full h-full">
