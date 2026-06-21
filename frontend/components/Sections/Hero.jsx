@@ -169,50 +169,51 @@ export default function Hero() {
         </div>
 
         {/* Desktop floating cards */}
-        <div ref={cardsRef} className="hidden lg:block">
-          <FloatingMetricCard
-            icon={Shield}
-            label="AI OPERATIONS SCORE"
-            value="94%"
-            trend="↑ 3.2% this month"
-            trendColor="text-success"
-            position="-top-[140px] -left-[340px]"
-            delay={0}
-            duration={12}
-            variant="cyan"
-          />
-          <FloatingMetricCard
-            icon={AlertTriangle}
-            label="PROBLEMS DETECTED"
-            value="12"
-            trend="↓ 8 from last week"
-            trendColor="text-success"
-            position="-top-[160px] -right-[220px]"
-            delay={3}
-            duration={14}
-          />
-          <FloatingMetricCard
-            icon={TrendingUp}
-            label="EFFICIENCY GAIN"
-            value="+31%"
-            trend="vs. Q1 baseline"
-            trendColor="text-ai-muted"
-            position="top-[80px] -left-[300px]"
-            delay={6}
-            duration={11}
-            variant="electric"
-          />
-          <FloatingMetricCard
-            icon={Brain}
-            label="PREDICTIVE INSIGHTS"
-            value="2,847"
-            trend="Generated this quarter"
-            trendColor="text-ai-muted"
-            position="top-[100px] -right-[260px]"
-            delay={9}
-            duration={13}
-          />
-        </div>
+        {/* Desktop floating cards */}
+<div ref={cardsRef} className="hidden lg:block">
+  <FloatingMetricCard
+    icon={Shield}
+    label="AI OPERATIONS SCORE"
+    value="94%"
+    trend="↑ 3.2% this month"
+    trendColor="text-success"
+    position="top-[18%] left-[6%]"
+    delay={0}
+    duration={12}
+    variant="cyan"
+  />
+  <FloatingMetricCard
+    icon={AlertTriangle}
+    label="PROBLEMS DETECTED"
+    value="12"
+    trend="↓ 8 from last week"
+    trendColor="text-success"
+    position="top-[18%] right-[6%]"
+    delay={3}
+    duration={14}
+  />
+  <FloatingMetricCard
+    icon={TrendingUp}
+    label="EFFICIENCY GAIN"
+    value="+31%"
+    trend="vs. Q1 baseline"
+    trendColor="text-ai-muted"
+    position="top-[55%] left-[4%]"
+    delay={6}
+    duration={11}
+    variant="electric"
+  />
+  <FloatingMetricCard
+    icon={Brain}
+    label="PREDICTIVE INSIGHTS"
+    value="2,847"
+    trend="Generated this quarter"
+    trendColor="text-ai-muted"
+    position="top-[55%] right-[4%]"
+    delay={9}
+    duration={13}
+  />
+</div>
 
         {/* Mobile cards */}
         <div className="grid grid-cols-2 gap-3 mt-10 lg:hidden w-full max-w-[360px]">
