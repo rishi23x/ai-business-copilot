@@ -1,5 +1,5 @@
-import BackgroundFX from '../components/layout/BackgroundFX'
-import Logo from '../components/ui/Logo'
+import BackgroundFX from '../components/layout/backgroundfx'
+import Logo from '../components/ui/logo'
 
 export default function HomePage() {
   return (
