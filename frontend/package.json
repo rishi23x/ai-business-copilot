@@ -8,16 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
     "@tailwindcss/postcss": "latest",
     "autoprefixer": "latest",
+    "clsx": "^2.1.1",
     "framer-motion": "latest",
-    "three": "^0.175.0",
-    "@react-three/fiber": "^9.0.0",
-    "@react-three/drei": "^10.0.0",
+    "lucide-react": "^0.460.0",
     "next": "latest",
     "postcss": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "three": "^0.175.0"
   }
 }
