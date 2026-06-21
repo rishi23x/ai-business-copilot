@@ -1,27 +1,32 @@
 'use client'
 
-export default function PillButton({ children, variant = 'primary', href = '#', onClick }) {
-  const baseClasses =
-    'px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 inline-block'
+import { cn } from '../../lib/utils'
 
-  const variantStyles =
-    variant === 'primary'
-      ? {
-          background: 'linear-gradient(135deg, #22D3EE 0%, #06B6D4 100%)',
-          color: '#05060A',
-          boxShadow: '0 0 32px rgba(34,211,238,0.40)',
-        }
-      : {
-          background: 'rgba(255,255,255,0.04)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255,255,255,0.12)',
-          color: '#F5F7FA',
-        }
+export default function PillButton({
+  variant = 'primary',
+  size = 'default',
+  children,
+  className = '',
+  href,
+  onClick,
+  ...props
+}) {
+  const baseClasses = variant === 'primary' ? 'btn-primary' : 'btn-secondary'
+  const sizeClasses = size === 'large' ? 'text-[16px] px-9 py-4' : ''
+
+  const allClasses = cn(baseClasses, sizeClasses, className)
+
+  if (href) {
+    return (
+      <a href={href} className={allClasses} onClick={onClick}>
+        {children}
+      </a>
+    )
+  }
 
   return (
-    <a href={href} onClick={onClick} className={baseClasses} style={variantStyles}>
+    <button className={allClasses} onClick={onClick} {...props}>
       {children}
-    </a>
+    </button>
   )
 }
