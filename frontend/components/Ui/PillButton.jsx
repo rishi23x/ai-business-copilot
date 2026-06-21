@@ -1,7 +1,5 @@
 'use client'
 
-import { cn } from '../../lib/utils'
-
 export default function PillButton({
   variant = 'primary',
   size = 'default',
@@ -13,8 +11,7 @@ export default function PillButton({
 }) {
   const baseClasses = variant === 'primary' ? 'btn-primary' : 'btn-secondary'
   const sizeClasses = size === 'large' ? 'text-[16px] px-9 py-4' : ''
-
-  const allClasses = cn(baseClasses, sizeClasses, className)
+  const allClasses = `${baseClasses} ${sizeClasses} ${className}`.trim()
 
   if (href) {
     return (
